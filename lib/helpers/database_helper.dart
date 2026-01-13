@@ -25,7 +25,7 @@ class DatabaseHelper {
   Future _onCreate(Database db, int version) async {
     await db.execute('''
       CREATE TABLE galeria (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        id INT PRIMARY KEY AUTOINCREMENT,
         titulo TEXT,
         imageUrl TEXT,
         autor TEXT
@@ -37,7 +37,7 @@ class DatabaseHelper {
       15,
       (index) => {
         'titulo': 'Imagen ${index + 1}',
-        'imageUrl': 'https://source.unsplash.com/random/200x200?sig=$index',
+        'imageUrl': 'https://picsum.photos/200/200?random=$index',
         'autor': autor,
       },
     );
